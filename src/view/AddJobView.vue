@@ -19,7 +19,8 @@ const form = reactive({
 })
 
 const handleSubmit = async () => {
-    const newJob = {
+  const newJob = {
+        id: Math.ceil(Math.random()*1000000),
         type: form.type,
         title: form.title,
         description: form.description,
@@ -39,7 +40,7 @@ const handleSubmit = async () => {
         toast.success('Job added successfully')
     } catch (error) {
         console.error(`Error saving new job: ${newJob}`)
-        toast.success('Job was not added')
+        toast.error('Job was not added')
     }
 }
 

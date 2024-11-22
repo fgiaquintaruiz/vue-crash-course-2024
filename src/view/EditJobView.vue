@@ -50,7 +50,8 @@ const form = reactive({
 })
 
 const handleSubmit = async () => {
-    const updatedJob = {
+  const updatedJob = {
+        id: jobId,
         type: form.type,
         title: form.title,
         description: form.description,
@@ -70,7 +71,7 @@ const handleSubmit = async () => {
         toast.success('Job updated successfully')
     } catch (error) {
         console.error(`Error saving updated job: ${updatedJob}`)
-        toast.success('Job was not updated')
+        toast.error('Job was not updated')
     }
 }
 
